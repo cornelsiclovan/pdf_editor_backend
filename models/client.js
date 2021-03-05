@@ -1,9 +1,13 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 const uniqueValidator= require('mongoose-unique-validator');
 
 const Schema = mongoose.Schema;
 
 const clientSchema = new Schema({
+    tribunalul : {
+        type: String,
+        required: true
+    },
     subsemnatul: {
         type: String,
         required: true
@@ -158,6 +162,5 @@ const clientSchema = new Schema({
     }
 });
 
-clientSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('Client', clientSchema);
