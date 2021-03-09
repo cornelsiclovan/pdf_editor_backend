@@ -1,3 +1,83 @@
+11-10-141 DECLARATIE MODEL 1.pdf
+------------------------------------
+PDFTextField: catre.0
+PDFTextField: catre.1
+PDFTextField: catre.2
+PDFTextField: catre.3
+PDFTextField: orc
+PDFTextField: subsemnatul
+PDFTextField: domiciliat
+PDFTextField: strada
+PDFTextField: numar
+PDFTextField: bloc
+PDFTextField: scara
+PDFTextField: etaj
+PDFTextField: apartament
+PDFTextField: judet
+PDFTextField: telefon
+PDFTextField: act_ident
+PDFTextField: act_ident_seria
+PDFTextField: act_ident_numar
+PDFTextField: cnp_nif
+PDFTextField: eliberat
+PDFTextField: eliberat_data
+PDFTextField: calitate
+PDFTextField: firma
+PDFTextField: nr_ordine_rc
+PDFTextField: CUI
+PDFTextField: sediu_domiciliat
+PDFTextField: sediu_strada
+PDFTextField: sediu_numar
+PDFTextField: sediu_bloc
+PDFTextField: sediu_scara
+PDFTextField: sediu_etaj
+PDFTextField: sediu_apartament
+PDFTextField: sediu_judet
+PDFTextField: sediu_cod
+PDFTextField: sediu_cod_post
+PDFTextField: sediu_telefon
+PDFTextField: sediu_telefon1
+PDFTextField: sediu_fax
+PDFTextField: sediu_fax1
+PDFTextField: sediu_mail
+PDFTextField: sediu_web
+PDFTextField: declar.0
+PDFTextField: declar.1
+PDFTextField: declar.2
+PDFTextField: declar.3
+PDFTextField: data
+
+D1-Nu-se-desfasora-activitate-la-Sediul-profesional-PFA-II-IF.pdf
+------------------------------------
+PDFTextField: 23
+PDFTextField: 24
+PDFTextField: 25
+PDFTextField: 26
+PDFTextField: 27
+PDFTextField: 28
+PDFTextField: 29
+PDFTextField: 30
+PDFTextField: 1
+PDFTextField: 2
+PDFTextField: 3
+PDFTextField: 4
+PDFTextField: 5
+PDFTextField: 6
+PDFTextField: 7
+PDFTextField: 8
+PDFTextField: 9
+PDFTextField: 10
+PDFTextField: 11
+PDFTextField: 12
+PDFTextField: 13
+PDFTextField: 14
+PDFTextField: 15
+PDFTextField: 16
+PDFTextField: 17
+PDFTextField: 18
+PDFTextField: 19
+PDFTextField: 21
+
 specimen_de_semnaturi.pdf
 ------------------------------------
 PDFTextField: form1
@@ -34,6 +114,53 @@ PDFTextField: form19
 PDFTextField: form20
 PDFTextField: form21
 PDFTextField: form22
+
+11-10-160 AVIZ ASOCIATIE.pdf
+------------------------------------
+PDFTextField: bloc
+PDFTextField: str
+PDFTextField: nr
+PDFTextField: localitate
+PDFTextField: judet
+PDFTextField: domn_doamna
+PDFTextField: domiciliu
+PDFTextField: dom_str
+PDFTextField: dom_nr
+PDFTextField: dom_bloc
+PDFTextField: dom_sc
+PDFTextField: dom_et
+PDFTextField: dom_ap
+PDFTextField: dom_calitate
+PDFTextField: sediu_str1
+PDFTextField: sediu_nr
+PDFTextField: sediu_bloc
+PDFTextField: sediu_sc
+PDFTextField: sediu_et
+PDFTextField: sediu_localitate
+PDFTextField: sediu_judet
+PDFTextField: sediu_firma
+PDFTextField: cod
+PDFTextField: cui
+PDFTextField: activitati1
+PDFTextField: activitati2
+PDFTextField: data
+PDFTextField: sediu_ap
+PDFTextField: ap_nr.0
+PDFTextField: ap_nr.1
+PDFTextField: ap_nr.2
+PDFTextField: ap_nr.3
+PDFTextField: ap_nr.4
+PDFTextField: ap_nr.5
+PDFTextField: ap_nr.6
+PDFTextField: ap_nr.7
+PDFTextField: ap_domn_doamna.0
+PDFTextField: ap_domn_doamna.1
+PDFTextField: ap_domn_doamna.2
+PDFTextField: ap_domn_doamna.3
+PDFTextField: ap_domn_doamna.4
+PDFTextField: ap_domn_doamna.5
+PDFTextField: ap_domn_doamna.6
+PDFTextField: ap_domn_doamna.7
 
 11-10-167-2 DECLARATIE MODEL 2.pdf
 ------------------------------------
@@ -512,53 +639,6 @@ PDFTextField: clasa_caen_out_desc.0.13
 PDFTextField: clasa_caen_out_desc.0.14
 PDFTextField: data1
 
-11-10-160 AVIZ ASOCIATIE.pdf
-------------------------------------
-PDFTextField: bloc
-PDFTextField: str
-PDFTextField: nr
-PDFTextField: localitate
-PDFTextField: judet
-PDFTextField: domn_doamna
-PDFTextField: domiciliu
-PDFTextField: dom_str
-PDFTextField: dom_nr
-PDFTextField: dom_bloc
-PDFTextField: dom_sc
-PDFTextField: dom_et
-PDFTextField: dom_ap
-PDFTextField: dom_calitate
-PDFTextField: sediu_str1
-PDFTextField: sediu_nr
-PDFTextField: sediu_bloc
-PDFTextField: sediu_sc
-PDFTextField: sediu_et
-PDFTextField: sediu_localitate
-PDFTextField: sediu_judet
-PDFTextField: sediu_firma
-PDFTextField: cod
-PDFTextField: cui
-PDFTextField: activitati1
-PDFTextField: activitati2
-PDFTextField: data
-PDFTextField: sediu_ap
-PDFTextField: ap_nr.0
-PDFTextField: ap_nr.1
-PDFTextField: ap_nr.2
-PDFTextField: ap_nr.3
-PDFTextField: ap_nr.4
-PDFTextField: ap_nr.5
-PDFTextField: ap_nr.6
-PDFTextField: ap_nr.7
-PDFTextField: ap_domn_doamna.0
-PDFTextField: ap_domn_doamna.1
-PDFTextField: ap_domn_doamna.2
-PDFTextField: ap_domn_doamna.3
-PDFTextField: ap_domn_doamna.4
-PDFTextField: ap_domn_doamna.5
-PDFTextField: ap_domn_doamna.6
-PDFTextField: ap_domn_doamna.7
-
 11-10-150-1 CERERE INREGISTRARE.pdf
 ------------------------------------
 PDFCheckBox: cerere_inmatric
@@ -734,69 +814,6 @@ PDFTextField: anexa_nr
 PDFTextField: decl_model
 PDFTextField: data1
 
-11-10-189 CERERE ACTUALIZ CAEN.pdf
-------------------------------------
-PDFCheckBox: act_obj_CAEN
-PDFCheckBox: act_obj_oreciz
-PDFTextField: ORC
-PDFCheckBox: act_obj_preschimb
-PDFTextField: subsemnatul
-PDFTextField: domiciliat
-PDFTextField: strada
-PDFTextField: numar
-PDFTextField: bloc
-PDFTextField: scara
-PDFTextField: etaj
-PDFTextField: apartament
-PDFTextField: judet
-PDFTextField: telefon
-PDFTextField: act_ident
-PDFTextField: act_ident_seria
-PDFTextField: act_ident_numar
-PDFTextField: eliberat
-PDFTextField: eliberat_data
-PDFTextField: cnp_nif
-PDFTextField: calitate
-PDFTextField: prin
-PDFTextField: conform
-PDFTextField: firma
-PDFTextField: nr_ordine_rc
-PDFTextField: CUI
-PDFTextField: sediu_domiciliat
-PDFTextField: sediu_strada
-PDFTextField: sediu_numar
-PDFTextField: sediu_bloc
-PDFTextField: sediu_scara
-PDFTextField: sediu_etaj
-PDFTextField: sediu_apartament
-PDFTextField: sediu_judet
-PDFTextField: sediu_cod
-PDFTextField: sediu_telefon
-PDFTextField: sediu_telefon1
-PDFTextField: sediu_fax
-PDFTextField: sediu_fax1
-PDFTextField: sediu_mail
-PDFTextField: sediu_web
-PDFCheckBox: act_obj_reg_com
-PDFCheckBox: act_obj_preschimb_certif
-PDFTextField: CAEN_rev1.0
-PDFTextField: CAEN_rev1.1
-PDFTextField: CAEN_rev2.0
-PDFTextField: CAEN_rev2.1
-PDFCheckBox: certif_inreg
-PDFCheckBox: imputernicire.0
-PDFCheckBox: imputernicire.1
-PDFCheckBox: imputernicire.2
-PDFCheckBox: imputernicire.3
-PDFTextField: imputernicire_nr
-PDFTextField: imputernicire_data
-PDFTextField: imputernicire_emit
-PDFCheckBox: comunicare_posta
-PDFCheckBox: comunicare_birou
-PDFTextField: data_complet
-PDFTextField: data_complet2
-PDFTextField: data_complet3
-
 11-10-183 CERERE RADIERE.pdf
 ------------------------------------
 PDFTextField: contact_nume
@@ -883,6 +900,69 @@ PDFTextField: calitate
 PDFTextField: reprezentat
 PDFTextField: prin
 
+11-10-189 CERERE ACTUALIZ CAEN.pdf
+------------------------------------
+PDFCheckBox: act_obj_CAEN
+PDFCheckBox: act_obj_oreciz
+PDFTextField: ORC
+PDFCheckBox: act_obj_preschimb
+PDFTextField: subsemnatul
+PDFTextField: domiciliat
+PDFTextField: strada
+PDFTextField: numar
+PDFTextField: bloc
+PDFTextField: scara
+PDFTextField: etaj
+PDFTextField: apartament
+PDFTextField: judet
+PDFTextField: telefon
+PDFTextField: act_ident
+PDFTextField: act_ident_seria
+PDFTextField: act_ident_numar
+PDFTextField: eliberat
+PDFTextField: eliberat_data
+PDFTextField: cnp_nif
+PDFTextField: calitate
+PDFTextField: prin
+PDFTextField: conform
+PDFTextField: firma
+PDFTextField: nr_ordine_rc
+PDFTextField: CUI
+PDFTextField: sediu_domiciliat
+PDFTextField: sediu_strada
+PDFTextField: sediu_numar
+PDFTextField: sediu_bloc
+PDFTextField: sediu_scara
+PDFTextField: sediu_etaj
+PDFTextField: sediu_apartament
+PDFTextField: sediu_judet
+PDFTextField: sediu_cod
+PDFTextField: sediu_telefon
+PDFTextField: sediu_telefon1
+PDFTextField: sediu_fax
+PDFTextField: sediu_fax1
+PDFTextField: sediu_mail
+PDFTextField: sediu_web
+PDFCheckBox: act_obj_reg_com
+PDFCheckBox: act_obj_preschimb_certif
+PDFTextField: CAEN_rev1.0
+PDFTextField: CAEN_rev1.1
+PDFTextField: CAEN_rev2.0
+PDFTextField: CAEN_rev2.1
+PDFCheckBox: certif_inreg
+PDFCheckBox: imputernicire.0
+PDFCheckBox: imputernicire.1
+PDFCheckBox: imputernicire.2
+PDFCheckBox: imputernicire.3
+PDFTextField: imputernicire_nr
+PDFTextField: imputernicire_data
+PDFTextField: imputernicire_emit
+PDFCheckBox: comunicare_posta
+PDFCheckBox: comunicare_birou
+PDFTextField: data_complet
+PDFTextField: data_complet2
+PDFTextField: data_complet3
+
 11-10-181 - REZERVARE DENUMIRE.pdf
 ------------------------------------
 PDFTextField: subsemnat
@@ -929,55 +1009,6 @@ PDFTextField: nume
 PDFTextField: data2
 PDFTextField: data_intoc
 PDFTextField: domiciliat
-
-11-10-141 DECLARATIE MODEL 1.pdf
-------------------------------------
-PDFTextField: catre.0
-PDFTextField: catre.1
-PDFTextField: catre.2
-PDFTextField: catre.3
-PDFTextField: orc
-PDFTextField: subsemnatul
-PDFTextField: domiciliat
-PDFTextField: strada
-PDFTextField: numar
-PDFTextField: bloc
-PDFTextField: scara
-PDFTextField: etaj
-PDFTextField: apartament
-PDFTextField: judet
-PDFTextField: telefon
-PDFTextField: act_ident
-PDFTextField: act_ident_seria
-PDFTextField: act_ident_numar
-PDFTextField: cnp_nif
-PDFTextField: eliberat
-PDFTextField: eliberat_data
-PDFTextField: calitate
-PDFTextField: firma
-PDFTextField: nr_ordine_rc
-PDFTextField: CUI
-PDFTextField: sediu_domiciliat
-PDFTextField: sediu_strada
-PDFTextField: sediu_numar
-PDFTextField: sediu_bloc
-PDFTextField: sediu_scara
-PDFTextField: sediu_etaj
-PDFTextField: sediu_apartament
-PDFTextField: sediu_judet
-PDFTextField: sediu_cod
-PDFTextField: sediu_cod_post
-PDFTextField: sediu_telefon
-PDFTextField: sediu_telefon1
-PDFTextField: sediu_fax
-PDFTextField: sediu_fax1
-PDFTextField: sediu_mail
-PDFTextField: sediu_web
-PDFTextField: declar.0
-PDFTextField: declar.1
-PDFTextField: declar.2
-PDFTextField: declar.3
-PDFTextField: data
 
 11-10-184 CERERE MENTIUNE ACTE.pdf
 ------------------------------------
