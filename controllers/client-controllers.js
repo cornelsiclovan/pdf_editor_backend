@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const HttpError = require('../models/http-errors');
 const Client = require('../models/client');
 const {editfiles} = require('../editfiles');
+const {editotherfiles} = require('../editotherfiles');
 
 
 const router = express.Router();
@@ -311,9 +312,10 @@ const editFiles = async (req, res, next) => {
     }
 
     editfiles(client);
-
+    editotherfiles(client);
     res.status(200).json({message: "files generated succesfull"});
 }
+
 
 exports.editFiles = editFiles;
 exports.getClients = getClients;
