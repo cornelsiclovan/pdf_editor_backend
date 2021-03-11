@@ -54,7 +54,7 @@ const editotherfiles = async (formData) => {
                 const { width, height } = firstPage.getSize();
                 const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
 
-                console.log(file);
+               // console.log(file);
 
                 if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\declaratie_de_participare_sot_sotie.pdf") {
                     firstPage.drawText(formData.subsemnatul, {
@@ -323,7 +323,137 @@ const editotherfiles = async (formData) => {
                     });
                 } 
 
-                if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\act_constitutiv.pdf") {
+                if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\model_declaratie_pfa_2.pdf") {
+                    firstPage.drawText(formData.subsemnatul, {
+                        x: 212,
+                        y: 652,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.domiciliat, {
+                        x: 400,
+                        y: 638,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.strada, {
+                        x: 120,
+                        y: 624,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.numar, {
+                        x: 320,
+                        y: 624,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.bloc, {
+                        x: 370,
+                        y: 624,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.scara, {
+                        x: 420,
+                        y: 624,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.etaj, {
+                        x: 455,
+                        y: 624,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.apartament, {
+                        x: 502,
+                        y: 624,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.judet, {
+                        x: 150,
+                        y: 610,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.act_ident_seria, {
+                        x: 385,
+                        y: 610,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.act_ident_numar, {
+                        x: 420,
+                        y: 610,
+                        size: 9,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.eliberat, {
+                        x: 100,
+                        y: 596,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.eliberat_data, {
+                        x: 225,
+                        y: 596,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.cnp_nif, {
+                        x: 310,
+                        y: 596,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.tribunalul, {
+                        x: 100,
+                        y: 512,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+
+                    firstPage.drawText(formData.data, {
+                        x: 445,
+                        y: 426,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                    });
+                }   
+                
+                if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\pfa_sediu.pdf") {
                     firstPage.drawText("act constit", {
                         x: 5,
                         y: height / 2 + 300,
@@ -334,26 +464,46 @@ const editotherfiles = async (formData) => {
                     });
                 }
 
-                if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\model_declaratie_pfa_1.pdf") {
-                    firstPage.drawText("pfa1", {
-                        x: 140,
-                        y: 600,
-                        size: 12,
+                if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\act_constitutiv.pdf") {
+                    firstPage.drawText(formData.firma, {
+                        x: 255,
+                        y: 678,
+                        size: 11,
                         font: helveticaFont,
                         color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.subsemnatul, {
+                        x: 190,
+                        y: 605,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.domiciliat, {
+                        x: 365,
+                        y: 590,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.strada, {
+                        x: 405,
+                        y: 590,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
                     });
                 }
 
-                if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\model_declaratie_pfa_2.pdf") {
-                    firstPage.drawText("pfa2", {
-                        x: 5,
-                        y: height / 2 + 300,
-                        size: 50,
-                        font: helveticaFont,
-                        color: rgb(0.95, 0.1, 0.1),
-                        rotate: degrees(-45)
-                    });
-                }
+             
+
 
                 fs.writeFile(descriptionFilePath, descriptionString, err => {})
 
