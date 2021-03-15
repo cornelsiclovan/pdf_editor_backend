@@ -476,7 +476,7 @@ const editotherfiles = async (formData) => {
 
                     firstPage.drawText(formData.subsemnatul, {
                         x: 190,
-                        y: 605,
+                        y: 604,
                         size: 11,
                         font: helveticaFont,
                         color: rgb(0.95, 0.1, 0.1),
@@ -484,8 +484,8 @@ const editotherfiles = async (formData) => {
                     });
 
                     firstPage.drawText(formData.domiciliat, {
-                        x: 365,
-                        y: 590,
+                        x: 97,
+                        y: 576,
                         size: 11,
                         font: helveticaFont,
                         color: rgb(0.95, 0.1, 0.1),
@@ -493,9 +493,189 @@ const editotherfiles = async (formData) => {
                     });
 
                     firstPage.drawText(formData.strada, {
-                        x: 405,
-                        y: 590,
+                        x: 315,
+                        y: 576,
                         size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.numar, {
+                        x: 97,
+                        y: 562,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.bloc, {
+                        x: 145,
+                        y: 562,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.scara, {
+                        x: 175,
+                        y: 562,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.etaj, {
+                        x: 212,
+                        y: 562,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.apartament, {
+                        x: 242,
+                        y: 562,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.judet, {
+                        x: 295,
+                        y: 562,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.act_ident_seria, {
+                        x: 478,
+                        y: 562,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.act_ident_numar, {
+                        x: 97,
+                        y: 550,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.eliberat, {
+                        x: 212,
+                        y: 550,
+                        size: 11,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.eliberat_data, {
+                        x: 352,
+                        y: 550,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.cnp_nif, {
+                        x: 180,
+                        y: 538,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.firma, {
+                        x: 250,
+                        y: 484,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.sediu_judet, {
+                        x: 430,
+                        y: 324,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.sediu_domiciliat, {
+                        x: 97,
+                        y: 311,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.sediu_strada, {
+                        x: 280,
+                        y: 311,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.sediu_numar, {
+                        x: 480,
+                        y: 311,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.sediu_bloc, {
+                        x: 107,
+                        y: 298,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.sediu_scara, {
+                        x: 147,
+                        y: 298,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.sediu_etaj, {
+                        x: 190,
+                        y: 298,
+                        size: 10,
+                        font: helveticaFont,
+                        color: rgb(0.95, 0.1, 0.1),
+                        
+                    });
+
+                    firstPage.drawText(formData.sediu_apartament, {
+                        x: 230,
+                        y: 298,
+                        size: 10,
                         font: helveticaFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
