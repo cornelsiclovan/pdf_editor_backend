@@ -78,13 +78,96 @@ PDFTextField: 18
 PDFTextField: 19
 PDFTextField: 21
 
-11-10-167-2 DECLARATIE MODEL 2.pdf
+specimen_de_semnaturi.pdf
+------------------------------------
+PDFTextField: form1
+PDFTextField: form2
+PDFTextField: form3
+PDFTextField: form4
+PDFTextField: form5
+PDFTextField: form6
+PDFTextField: form7
+PDFTextField: form9
+PDFTextField: form10
+PDFTextField: form8
+PDFTextField: form11
+PDFTextField: form12
+PDFTextField: form13
+PDFTextField: form14
+PDFTextField: form15
+PDFTextField: form16
+PDFTextField: form17
+PDFTextField: form18
+PDFTextField: J1
+PDFTextField: J2
+PDFTextField: J3
+PDFTextField: J4
+PDFTextField: J5
+PDFTextField: J6
+PDFTextField: J7
+PDFTextField: J8
+PDFTextField: J9
+PDFTextField: J10
+PDFTextField: J11
+PDFTextField: J12
+PDFTextField: form19
+PDFTextField: form20
+PDFTextField: form21
+PDFTextField: form22
+
+11-10-160 AVIZ ASOCIATIE.pdf
+------------------------------------
+PDFTextField: bloc
+PDFTextField: str
+PDFTextField: nr
+PDFTextField: localitate
+PDFTextField: judet
+PDFTextField: domn_doamna
+PDFTextField: domiciliu
+PDFTextField: dom_str
+PDFTextField: dom_nr
+PDFTextField: dom_bloc
+PDFTextField: dom_sc
+PDFTextField: dom_et
+PDFTextField: dom_ap
+PDFTextField: dom_calitate
+PDFTextField: sediu_str1
+PDFTextField: sediu_nr
+PDFTextField: sediu_bloc
+PDFTextField: sediu_sc
+PDFTextField: sediu_et
+PDFTextField: sediu_localitate
+PDFTextField: sediu_judet
+PDFTextField: sediu_firma
+PDFTextField: cod
+PDFTextField: cui
+PDFTextField: activitati1
+PDFTextField: activitati2
+PDFTextField: data
+PDFTextField: sediu_ap
+PDFTextField: ap_nr.0
+PDFTextField: ap_nr.1
+PDFTextField: ap_nr.2
+PDFTextField: ap_nr.3
+PDFTextField: ap_nr.4
+PDFTextField: ap_nr.5
+PDFTextField: ap_nr.6
+PDFTextField: ap_nr.7
+PDFTextField: ap_domn_doamna.0
+PDFTextField: ap_domn_doamna.1
+PDFTextField: ap_domn_doamna.2
+PDFTextField: ap_domn_doamna.3
+PDFTextField: ap_domn_doamna.4
+PDFTextField: ap_domn_doamna.5
+PDFTextField: ap_domn_doamna.6
+PDFTextField: ap_domn_doamna.7
+
+11-10-168-1 DECLARATIE MODEL 3.pdf
 ------------------------------------
 PDFTextField: catre.0
 PDFTextField: catre.1
 PDFTextField: catre.2
 PDFTextField: catre.3
-PDFTextField: orc
 PDFTextField: subsemnatul
 PDFTextField: domiciliat
 PDFTextField: strada
@@ -155,6 +238,10 @@ PDFTextField: clasa_caen_desc.0.9
 PDFTextField: clasa_caen_desc.0.10
 PDFTextField: clasa_caen_desc.0.11
 PDFTextField: data
+PDFTextField: orc
+PDFTextField: declar_data
+PDFTextField: declar_nr
+PDFTextField: orc1
 PDFCheckBox: sedii_sec
 PDFTextField: firma_angaj1
 PDFTextField: nr_crt.0.0
@@ -315,59 +402,13 @@ PDFTextField: clasa_caen_out_desc.0.13
 PDFTextField: clasa_caen_out_desc.0.14
 PDFTextField: data1
 
-11-10-160 AVIZ ASOCIATIE.pdf
-------------------------------------
-PDFTextField: bloc
-PDFTextField: str
-PDFTextField: nr
-PDFTextField: localitate
-PDFTextField: judet
-PDFTextField: domn_doamna
-PDFTextField: domiciliu
-PDFTextField: dom_str
-PDFTextField: dom_nr
-PDFTextField: dom_bloc
-PDFTextField: dom_sc
-PDFTextField: dom_et
-PDFTextField: dom_ap
-PDFTextField: dom_calitate
-PDFTextField: sediu_str1
-PDFTextField: sediu_nr
-PDFTextField: sediu_bloc
-PDFTextField: sediu_sc
-PDFTextField: sediu_et
-PDFTextField: sediu_localitate
-PDFTextField: sediu_judet
-PDFTextField: sediu_firma
-PDFTextField: cod
-PDFTextField: cui
-PDFTextField: activitati1
-PDFTextField: activitati2
-PDFTextField: data
-PDFTextField: sediu_ap
-PDFTextField: ap_nr.0
-PDFTextField: ap_nr.1
-PDFTextField: ap_nr.2
-PDFTextField: ap_nr.3
-PDFTextField: ap_nr.4
-PDFTextField: ap_nr.5
-PDFTextField: ap_nr.6
-PDFTextField: ap_nr.7
-PDFTextField: ap_domn_doamna.0
-PDFTextField: ap_domn_doamna.1
-PDFTextField: ap_domn_doamna.2
-PDFTextField: ap_domn_doamna.3
-PDFTextField: ap_domn_doamna.4
-PDFTextField: ap_domn_doamna.5
-PDFTextField: ap_domn_doamna.6
-PDFTextField: ap_domn_doamna.7
-
-11-10-168-1 DECLARATIE MODEL 3.pdf
+11-10-167-2 DECLARATIE MODEL 2.pdf
 ------------------------------------
 PDFTextField: catre.0
 PDFTextField: catre.1
 PDFTextField: catre.2
 PDFTextField: catre.3
+PDFTextField: orc
 PDFTextField: subsemnatul
 PDFTextField: domiciliat
 PDFTextField: strada
@@ -438,10 +479,6 @@ PDFTextField: clasa_caen_desc.0.9
 PDFTextField: clasa_caen_desc.0.10
 PDFTextField: clasa_caen_desc.0.11
 PDFTextField: data
-PDFTextField: orc
-PDFTextField: declar_data
-PDFTextField: declar_nr
-PDFTextField: orc1
 PDFCheckBox: sedii_sec
 PDFTextField: firma_angaj1
 PDFTextField: nr_crt.0.0
@@ -776,43 +813,6 @@ PDFTextField: total_file
 PDFTextField: anexa_nr
 PDFTextField: decl_model
 PDFTextField: data1
-
-specimen_de_semnaturi.pdf
-------------------------------------
-PDFTextField: form1
-PDFTextField: form2
-PDFTextField: form3
-PDFTextField: form4
-PDFTextField: form5
-PDFTextField: form6
-PDFTextField: form7
-PDFTextField: form9
-PDFTextField: form10
-PDFTextField: form8
-PDFTextField: form11
-PDFTextField: form12
-PDFTextField: form13
-PDFTextField: form14
-PDFTextField: form15
-PDFTextField: form16
-PDFTextField: form17
-PDFTextField: form18
-PDFTextField: J1
-PDFTextField: J2
-PDFTextField: J3
-PDFTextField: J4
-PDFTextField: J5
-PDFTextField: J6
-PDFTextField: J7
-PDFTextField: J8
-PDFTextField: J9
-PDFTextField: J10
-PDFTextField: J11
-PDFTextField: J12
-PDFTextField: form19
-PDFTextField: form20
-PDFTextField: form21
-PDFTextField: form22
 
 11-10-189 CERERE ACTUALIZ CAEN.pdf
 ------------------------------------

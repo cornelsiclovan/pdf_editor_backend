@@ -220,6 +220,8 @@ const updateClient = async (req, res, next) => {
         return next( new HttpError('Updating client failed, client not found.', 500));
     }
    
+    console.log(tribunalul);
+
     client.tribunalul = tribunalul;
     client.subsemnatul = subsemnatul;
     client.domiciliat  = domiciliat;

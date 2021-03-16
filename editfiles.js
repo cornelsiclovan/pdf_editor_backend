@@ -3,6 +3,9 @@ const { PDFDocument, StandardFonts } = require('pdf-lib');
 const admZip = require('adm-zip');
 const xml2js = require('xml2js');
 
+const fontkit = require('@pdf-lib/fontkit')
+
+
 const fs = require('fs');
 const util = require('util');
 const path = require('path');
@@ -13,6 +16,7 @@ let descriptionString = '';
 const readFolder = './MODELE_DOCUMENTE/';
 
 
+let fontBytes;
 
 let files = [];
 const getFiles = () => {
@@ -25,6 +29,15 @@ const editfiles = async (formData) => {
             files.push(file);
         });
     }); 
+
+
+    // custom fonts 
+    const fontfile = path.join(__dirname,"fonts/RedRose-Regular.ttf");
+    
+    await fs.readFile(fontfile, (error, data) => {
+        fontBytes = data;
+    });
+    /// end custom fonts
 
     files.forEach(file => {
         let filename = file;
@@ -41,13 +54,22 @@ const editfiles = async (formData) => {
             fs.mkdirSync(userFolder);
 
         pathWrite = path.join(pathWrite, formData.subsemnatul);
-
+  
         pathWrite = path.join(pathWrite, filename);
 
             fs.readFile(file, async (error, data) => {
-                
+
                 const pdfDoc =await PDFDocument.load(data);
         
+
+                //custom fonts
+                pdfDoc.registerFontkit(fontkit);
+               
+                const customFont = await pdfDoc.embedFont(fontBytes);
+                
+                //// end custom fonts
+
+
                 const pages = await pdfDoc.getPages();
                 const firstPage = await pages[0]; 
             
@@ -405,6 +427,8 @@ const editfiles = async (formData) => {
 
             fs.writeFile(descriptionFilePath, descriptionString, err => {})
 
+            form.updateFieldAppearances(customFont);
+            
             const pdfBytes = await pdfDoc.save();
         
             fs.writeFile( pathWrite, pdfBytes, () => {
@@ -413,7 +437,7 @@ const editfiles = async (formData) => {
             });       
 
         });
-          
+           
     });
 }
 

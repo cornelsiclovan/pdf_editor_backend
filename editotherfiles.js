@@ -3,6 +3,8 @@ const { PDFDocument, StandardFonts, degrees, rgb } = require('pdf-lib');
 const admZip = require('adm-zip');
 const xml2js = require('xml2js');
 
+const fontkit = require('@pdf-lib/fontkit')
+
 const fs = require('fs');
 const util = require('util');
 const path = require('path');
@@ -12,7 +14,7 @@ const readFile = util.promisify(fs.readFile);
 let descriptionString = '';
 const readFolder = './MODELE_DOCUMENTE_PDF_DIN_DOCX/';
 
-
+let fontBytes;
 
 let files = [];
 const getFiles = () => {
@@ -25,6 +27,15 @@ const editotherfiles = async (formData) => {
             files.push(file);
         });
     }); 
+
+     // custom fonts 
+     const fontfile = path.join(__dirname,"fonts/RedRose-Regular.ttf");
+    
+     await fs.readFile(fontfile, (error, data) => {
+         fontBytes = data;
+     });
+     /// end custom fonts
+
 
     files.forEach(file => {
         let filename = file;
@@ -47,12 +58,18 @@ const editotherfiles = async (formData) => {
             fs.readFile(file, async (error, data) => {
                 
                 const pdfDoc =await PDFDocument.load(data);
+
+                 //custom fonts
+                 pdfDoc.registerFontkit(fontkit);
+                 const customFont = await pdfDoc.embedFont(fontBytes);
+                 
+                 //// end custom fonts
         
                 const pages = await pdfDoc.getPages();
                 const firstPage = await pages[0]; 
                 
                 const { width, height } = firstPage.getSize();
-                const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
+                //const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
 
                // console.log(file);
 
@@ -61,7 +78,7 @@ const editotherfiles = async (formData) => {
                         x: 230,
                         y: 612,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -69,7 +86,7 @@ const editotherfiles = async (formData) => {
                         x: 93,
                         y: 597,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -77,7 +94,7 @@ const editotherfiles = async (formData) => {
                         x: 179,
                         y: 597,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -85,7 +102,7 @@ const editotherfiles = async (formData) => {
                         x: 305,
                         y: 597,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -93,7 +110,7 @@ const editotherfiles = async (formData) => {
                         x: 365,
                         y: 597,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -101,7 +118,7 @@ const editotherfiles = async (formData) => {
                         x: 435,
                         y: 597,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -109,7 +126,7 @@ const editotherfiles = async (formData) => {
                         x: 484,
                         y: 597,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -118,7 +135,7 @@ const editotherfiles = async (formData) => {
                         x: 100,
                         y: 582,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -126,7 +143,7 @@ const editotherfiles = async (formData) => {
                         x: 250,
                         y: 582,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -134,7 +151,7 @@ const editotherfiles = async (formData) => {
                         x: 410,
                         y: 582,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
                 
@@ -142,7 +159,7 @@ const editotherfiles = async (formData) => {
                         x: 150,
                         y: 567,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
                 
@@ -150,7 +167,7 @@ const editotherfiles = async (formData) => {
                         x: 235,
                         y: 567,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -158,7 +175,7 @@ const editotherfiles = async (formData) => {
                         x: 275,
                         y: 567,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -166,7 +183,7 @@ const editotherfiles = async (formData) => {
                         x: 400,
                         y: 567,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -174,7 +191,7 @@ const editotherfiles = async (formData) => {
                         x: 150,
                         y: 552,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -182,7 +199,7 @@ const editotherfiles = async (formData) => {
                         x: 249,
                         y: 552,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -190,7 +207,7 @@ const editotherfiles = async (formData) => {
                         x: 205,
                         y: 537,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -198,7 +215,7 @@ const editotherfiles = async (formData) => {
                         x: 370,
                         y: 537,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -206,7 +223,7 @@ const editotherfiles = async (formData) => {
                         x: 340,
                         y: 522,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -214,7 +231,7 @@ const editotherfiles = async (formData) => {
                         x: 100,
                         y: 508,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -222,7 +239,7 @@ const editotherfiles = async (formData) => {
                         x: 380,
                         y: 508,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -230,7 +247,7 @@ const editotherfiles = async (formData) => {
                         x: 100,
                         y: 493,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -238,7 +255,7 @@ const editotherfiles = async (formData) => {
                         x: 225,
                         y: 493,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -246,7 +263,7 @@ const editotherfiles = async (formData) => {
                         x: 285,
                         y: 493,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -254,7 +271,7 @@ const editotherfiles = async (formData) => {
                         x: 345,
                         y: 493,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -262,7 +279,7 @@ const editotherfiles = async (formData) => {
                         x: 395,
                         y: 493,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -270,7 +287,7 @@ const editotherfiles = async (formData) => {
                         x: 440,
                         y: 493,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -278,7 +295,7 @@ const editotherfiles = async (formData) => {
                         x: 100,
                         y: 478,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -286,7 +303,7 @@ const editotherfiles = async (formData) => {
                         x: 285,
                         y: 478,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -294,7 +311,7 @@ const editotherfiles = async (formData) => {
                         x: 435,
                         y: 478,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -302,7 +319,7 @@ const editotherfiles = async (formData) => {
                         x: 140,
                         y: 464,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -310,7 +327,7 @@ const editotherfiles = async (formData) => {
                         x: 305,
                         y: 464,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -318,7 +335,7 @@ const editotherfiles = async (formData) => {
                         x: 130,
                         y: 165,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
                 } 
@@ -328,7 +345,7 @@ const editotherfiles = async (formData) => {
                         x: 212,
                         y: 652,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -336,7 +353,7 @@ const editotherfiles = async (formData) => {
                         x: 400,
                         y: 638,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -344,7 +361,7 @@ const editotherfiles = async (formData) => {
                         x: 120,
                         y: 624,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -352,7 +369,7 @@ const editotherfiles = async (formData) => {
                         x: 320,
                         y: 624,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -360,7 +377,7 @@ const editotherfiles = async (formData) => {
                         x: 370,
                         y: 624,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -368,7 +385,7 @@ const editotherfiles = async (formData) => {
                         x: 420,
                         y: 624,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -376,7 +393,7 @@ const editotherfiles = async (formData) => {
                         x: 455,
                         y: 624,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -384,7 +401,7 @@ const editotherfiles = async (formData) => {
                         x: 502,
                         y: 624,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -392,7 +409,7 @@ const editotherfiles = async (formData) => {
                         x: 150,
                         y: 610,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -400,7 +417,7 @@ const editotherfiles = async (formData) => {
                         x: 385,
                         y: 610,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -408,7 +425,7 @@ const editotherfiles = async (formData) => {
                         x: 420,
                         y: 610,
                         size: 9,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -416,7 +433,7 @@ const editotherfiles = async (formData) => {
                         x: 100,
                         y: 596,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -424,7 +441,7 @@ const editotherfiles = async (formData) => {
                         x: 225,
                         y: 596,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -432,7 +449,7 @@ const editotherfiles = async (formData) => {
                         x: 310,
                         y: 596,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -440,7 +457,7 @@ const editotherfiles = async (formData) => {
                         x: 100,
                         y: 512,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
 
@@ -448,7 +465,7 @@ const editotherfiles = async (formData) => {
                         x: 445,
                         y: 426,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                     });
                 }   
@@ -458,7 +475,7 @@ const editotherfiles = async (formData) => {
                         x: 5,
                         y: height / 2 + 300,
                         size: 50,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         rotate: degrees(-45)
                     });
@@ -469,7 +486,7 @@ const editotherfiles = async (formData) => {
                         x: 255,
                         y: 678,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -478,7 +495,7 @@ const editotherfiles = async (formData) => {
                         x: 190,
                         y: 604,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -487,7 +504,7 @@ const editotherfiles = async (formData) => {
                         x: 97,
                         y: 576,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -496,7 +513,7 @@ const editotherfiles = async (formData) => {
                         x: 315,
                         y: 576,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -505,7 +522,7 @@ const editotherfiles = async (formData) => {
                         x: 97,
                         y: 562,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -514,7 +531,7 @@ const editotherfiles = async (formData) => {
                         x: 145,
                         y: 562,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -523,7 +540,7 @@ const editotherfiles = async (formData) => {
                         x: 175,
                         y: 562,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -532,7 +549,7 @@ const editotherfiles = async (formData) => {
                         x: 212,
                         y: 562,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -541,7 +558,7 @@ const editotherfiles = async (formData) => {
                         x: 242,
                         y: 562,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -550,7 +567,7 @@ const editotherfiles = async (formData) => {
                         x: 295,
                         y: 562,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -559,7 +576,7 @@ const editotherfiles = async (formData) => {
                         x: 478,
                         y: 562,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -568,7 +585,7 @@ const editotherfiles = async (formData) => {
                         x: 97,
                         y: 550,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -577,7 +594,7 @@ const editotherfiles = async (formData) => {
                         x: 212,
                         y: 550,
                         size: 11,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -586,7 +603,7 @@ const editotherfiles = async (formData) => {
                         x: 352,
                         y: 550,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -595,7 +612,7 @@ const editotherfiles = async (formData) => {
                         x: 180,
                         y: 538,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -604,7 +621,7 @@ const editotherfiles = async (formData) => {
                         x: 250,
                         y: 484,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -613,7 +630,7 @@ const editotherfiles = async (formData) => {
                         x: 430,
                         y: 324,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -622,7 +639,7 @@ const editotherfiles = async (formData) => {
                         x: 97,
                         y: 311,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -631,7 +648,7 @@ const editotherfiles = async (formData) => {
                         x: 280,
                         y: 311,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -640,7 +657,7 @@ const editotherfiles = async (formData) => {
                         x: 480,
                         y: 311,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -649,7 +666,7 @@ const editotherfiles = async (formData) => {
                         x: 107,
                         y: 298,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -658,7 +675,7 @@ const editotherfiles = async (formData) => {
                         x: 147,
                         y: 298,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -667,7 +684,7 @@ const editotherfiles = async (formData) => {
                         x: 190,
                         y: 298,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
@@ -676,7 +693,7 @@ const editotherfiles = async (formData) => {
                         x: 230,
                         y: 298,
                         size: 10,
-                        font: helveticaFont,
+                        font: customFont,
                         color: rgb(0.95, 0.1, 0.1),
                         
                     });
