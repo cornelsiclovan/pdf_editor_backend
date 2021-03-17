@@ -29,15 +29,17 @@ const editotherfiles = async (formData) => {
     }); 
 
      // custom fonts 
-     const fontfile = path.join(__dirname,"fonts/RedRose-Regular.ttf");
+     const fontfile = path.join(__dirname, "fonts/RedRose-Regular.ttf");
     
      await fs.readFile(fontfile, (error, data) => {
-         fontBytes = data;
+        console.log("fontbytes fetch"); 
+        fontBytes = data;
      });
      /// end custom fonts
 
 
     files.forEach(file => {
+
         let filename = file;
         
         file = path.join(readFolder, file);
@@ -69,9 +71,6 @@ const editotherfiles = async (formData) => {
                 const firstPage = await pages[0]; 
                 
                 const { width, height } = firstPage.getSize();
-                //const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
-
-               // console.log(file);
 
                 if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\declaratie_de_participare_sot_sotie.pdf") {
                     firstPage.drawText(formData.subsemnatul, {
@@ -79,7 +78,7 @@ const editotherfiles = async (formData) => {
                         y: 612,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.domiciliat, {
@@ -87,7 +86,7 @@ const editotherfiles = async (formData) => {
                         y: 597,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.strada, {
@@ -95,7 +94,7 @@ const editotherfiles = async (formData) => {
                         y: 597,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.numar, {
@@ -103,7 +102,7 @@ const editotherfiles = async (formData) => {
                         y: 597,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.bloc, {
@@ -111,7 +110,7 @@ const editotherfiles = async (formData) => {
                         y: 597,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.scara, {
@@ -119,7 +118,7 @@ const editotherfiles = async (formData) => {
                         y: 597,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.etaj, {
@@ -127,7 +126,7 @@ const editotherfiles = async (formData) => {
                         y: 597,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     
@@ -136,7 +135,7 @@ const editotherfiles = async (formData) => {
                         y: 582,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.judet, {
@@ -144,7 +143,7 @@ const editotherfiles = async (formData) => {
                         y: 582,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.telefon, {
@@ -152,7 +151,7 @@ const editotherfiles = async (formData) => {
                         y: 582,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
                 
                     firstPage.drawText(formData.act_ident, {
@@ -160,7 +159,7 @@ const editotherfiles = async (formData) => {
                         y: 567,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
                 
                     firstPage.drawText(formData.act_ident_seria, {
@@ -168,7 +167,7 @@ const editotherfiles = async (formData) => {
                         y: 567,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.act_ident_numar, {
@@ -176,7 +175,7 @@ const editotherfiles = async (formData) => {
                         y: 567,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.cnp_nif, {
@@ -184,7 +183,7 @@ const editotherfiles = async (formData) => {
                         y: 567,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.eliberat, {
@@ -192,7 +191,7 @@ const editotherfiles = async (formData) => {
                         y: 552,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.eliberat_data, {
@@ -200,7 +199,7 @@ const editotherfiles = async (formData) => {
                         y: 552,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.calitate, {
@@ -208,7 +207,7 @@ const editotherfiles = async (formData) => {
                         y: 537,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.firma, {
@@ -216,7 +215,7 @@ const editotherfiles = async (formData) => {
                         y: 537,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.nr_ordine_rc, {
@@ -224,7 +223,7 @@ const editotherfiles = async (formData) => {
                         y: 522,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.cui, {
@@ -232,7 +231,7 @@ const editotherfiles = async (formData) => {
                         y: 508,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_domiciliat, {
@@ -240,7 +239,7 @@ const editotherfiles = async (formData) => {
                         y: 508,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_strada, {
@@ -248,7 +247,7 @@ const editotherfiles = async (formData) => {
                         y: 493,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_numar, {
@@ -256,7 +255,7 @@ const editotherfiles = async (formData) => {
                         y: 493,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_bloc, {
@@ -264,7 +263,7 @@ const editotherfiles = async (formData) => {
                         y: 493,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_scara, {
@@ -272,7 +271,7 @@ const editotherfiles = async (formData) => {
                         y: 493,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_etaj, {
@@ -280,7 +279,7 @@ const editotherfiles = async (formData) => {
                         y: 493,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_apartament, {
@@ -288,7 +287,7 @@ const editotherfiles = async (formData) => {
                         y: 493,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_judet, {
@@ -296,7 +295,7 @@ const editotherfiles = async (formData) => {
                         y: 478,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_telefon, {
@@ -304,7 +303,7 @@ const editotherfiles = async (formData) => {
                         y: 478,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_fax, {
@@ -312,7 +311,7 @@ const editotherfiles = async (formData) => {
                         y: 478,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_mail, {
@@ -320,7 +319,7 @@ const editotherfiles = async (formData) => {
                         y: 464,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.sediu_web, {
@@ -328,7 +327,7 @@ const editotherfiles = async (formData) => {
                         y: 464,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.data, {
@@ -336,7 +335,7 @@ const editotherfiles = async (formData) => {
                         y: 165,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
                 } 
 
@@ -346,7 +345,7 @@ const editotherfiles = async (formData) => {
                         y: 652,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.domiciliat, {
@@ -354,7 +353,7 @@ const editotherfiles = async (formData) => {
                         y: 638,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.strada, {
@@ -362,7 +361,7 @@ const editotherfiles = async (formData) => {
                         y: 624,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.numar, {
@@ -370,7 +369,7 @@ const editotherfiles = async (formData) => {
                         y: 624,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.bloc, {
@@ -378,7 +377,7 @@ const editotherfiles = async (formData) => {
                         y: 624,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.scara, {
@@ -386,7 +385,7 @@ const editotherfiles = async (formData) => {
                         y: 624,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.etaj, {
@@ -394,7 +393,7 @@ const editotherfiles = async (formData) => {
                         y: 624,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.apartament, {
@@ -402,7 +401,7 @@ const editotherfiles = async (formData) => {
                         y: 624,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.judet, {
@@ -410,7 +409,7 @@ const editotherfiles = async (formData) => {
                         y: 610,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.act_ident_seria, {
@@ -418,7 +417,7 @@ const editotherfiles = async (formData) => {
                         y: 610,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.act_ident_numar, {
@@ -426,7 +425,7 @@ const editotherfiles = async (formData) => {
                         y: 610,
                         size: 9,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.eliberat, {
@@ -434,7 +433,7 @@ const editotherfiles = async (formData) => {
                         y: 596,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.eliberat_data, {
@@ -442,7 +441,7 @@ const editotherfiles = async (formData) => {
                         y: 596,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.cnp_nif, {
@@ -450,7 +449,7 @@ const editotherfiles = async (formData) => {
                         y: 596,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.tribunalul, {
@@ -458,7 +457,7 @@ const editotherfiles = async (formData) => {
                         y: 512,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
 
                     firstPage.drawText(formData.data, {
@@ -466,28 +465,220 @@ const editotherfiles = async (formData) => {
                         y: 426,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                     });
                 }   
                 
                 if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\pfa_sediu.pdf") {
-                    firstPage.drawText("act constit", {
-                        x: 5,
-                        y: height / 2 + 300,
-                        size: 50,
+                    firstPage.drawText(formData.subsemnatul, {
+                        x: 205,
+                        y: 652,
+                        size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
-                        rotate: degrees(-45)
+                        color: rgb(0, 0 ,0),
                     });
-                }
 
+                    firstPage.drawText(formData.domiciliat, {
+                        x: 312,
+                        y: 624,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+
+                    firstPage.drawText(formData.strada, {
+                        x: 112,
+                        y: 610,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    }); 
+
+                    firstPage.drawText(formData.numar, {
+                        x: 352,
+                        y: 610,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+ 
+                    firstPage.drawText(formData.bloc, {
+                        x: 385,
+                        y: 610,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+
+                    firstPage.drawText(formData.scara, {
+                        x: 412,
+                        y: 610,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+ 
+                    firstPage.drawText(formData.etaj, {
+                        x: 454,
+                        y: 610,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+
+                    firstPage.drawText(formData.apartament, {
+                        x: 485,
+                        y: 610,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+ 
+                    firstPage.drawText(formData.judet, {
+                        x: 160,
+                        y: 596,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+
+                    firstPage.drawText(formData.act_ident_seria, {
+                        x: 120,
+                        y: 582,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+
+                    firstPage.drawText(formData.act_ident_numar, {
+                        x: 165,
+                        y: 582,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+
+
+                    firstPage.drawText(formData.eliberat, {
+                        x: 300,
+                        y: 582,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    }); 
+
+                    firstPage.drawText(formData.eliberat_data, {
+                        x: 97,
+                        y: 568,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });  
+
+                    firstPage.drawText(formData.cnp_nif, {
+                        x: 180,
+                        y: 568,
+                        size: 10,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });  
+
+                    firstPage.drawText(formData.firma, {
+                        x: 97,
+                        y: 554,
+                        size: 10,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    }); 
+
+                    firstPage.drawText(formData.sediu_domiciliat, {
+                        x: 260,
+                        y: 512,
+                        size: 10,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    }); 
+  
+                    firstPage.drawText(formData.sediu_strada, {
+                        x: 97,
+                        y: 498,
+                        size: 10,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    }); 
+  
+                    firstPage.drawText(formData.sediu_numar, {
+                        x: 345,
+                        y: 498,
+                        size: 10,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    }); 
+
+                    firstPage.drawText(formData.sediu_bloc, {
+                        x: 393,
+                        y: 498,
+                        size: 10,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+
+                    firstPage.drawText(formData.sediu_scara, {
+                        x: 424,
+                        y: 498,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+ 
+                    firstPage.drawText(formData.sediu_etaj, {
+                        x: 465,
+                        y: 498,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });
+
+                    firstPage.drawText(formData.sediu_apartament, {
+                        x: 97,
+                        y: 484,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });   
+
+                    firstPage.drawText(formData.sediu_judet, {
+                        x: 192,
+                        y: 484,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });   
+
+                    firstPage.drawText(formData.tribunalul, {
+                        x: 97,
+                        y: 450,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });     
+
+                    firstPage.drawText(formData.data, {
+                        x: 170,
+                        y: 353,
+                        size: 11,
+                        font: customFont,
+                        color: rgb(0, 0 ,0),
+                    });   
+                }    
+        
                 if(file === "MODELE_DOCUMENTE_PDF_DIN_DOCX\\act_constitutiv.pdf") {
                     firstPage.drawText(formData.firma, {
                         x: 255,
                         y: 678,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -496,16 +687,16 @@ const editotherfiles = async (formData) => {
                         y: 604,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
-
+   
                     firstPage.drawText(formData.domiciliat, {
                         x: 97,
                         y: 576,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -514,7 +705,7 @@ const editotherfiles = async (formData) => {
                         y: 576,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -523,7 +714,7 @@ const editotherfiles = async (formData) => {
                         y: 562,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -532,7 +723,7 @@ const editotherfiles = async (formData) => {
                         y: 562,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -541,7 +732,7 @@ const editotherfiles = async (formData) => {
                         y: 562,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -550,7 +741,7 @@ const editotherfiles = async (formData) => {
                         y: 562,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -559,7 +750,7 @@ const editotherfiles = async (formData) => {
                         y: 562,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -568,7 +759,7 @@ const editotherfiles = async (formData) => {
                         y: 562,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -577,7 +768,7 @@ const editotherfiles = async (formData) => {
                         y: 562,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -586,7 +777,7 @@ const editotherfiles = async (formData) => {
                         y: 550,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -595,7 +786,7 @@ const editotherfiles = async (formData) => {
                         y: 550,
                         size: 11,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -604,7 +795,7 @@ const editotherfiles = async (formData) => {
                         y: 550,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -613,7 +804,7 @@ const editotherfiles = async (formData) => {
                         y: 538,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -622,7 +813,7 @@ const editotherfiles = async (formData) => {
                         y: 484,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -631,7 +822,7 @@ const editotherfiles = async (formData) => {
                         y: 324,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -640,7 +831,7 @@ const editotherfiles = async (formData) => {
                         y: 311,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -649,7 +840,7 @@ const editotherfiles = async (formData) => {
                         y: 311,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -658,7 +849,7 @@ const editotherfiles = async (formData) => {
                         y: 311,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -667,7 +858,7 @@ const editotherfiles = async (formData) => {
                         y: 298,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -676,7 +867,7 @@ const editotherfiles = async (formData) => {
                         y: 298,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -685,7 +876,7 @@ const editotherfiles = async (formData) => {
                         y: 298,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
 
@@ -694,7 +885,7 @@ const editotherfiles = async (formData) => {
                         y: 298,
                         size: 10,
                         font: customFont,
-                        color: rgb(0.95, 0.1, 0.1),
+                        color: rgb(0, 0 ,0),
                         
                     });
                 }
