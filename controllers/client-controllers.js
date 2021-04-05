@@ -7,6 +7,8 @@ const HttpError = require('../models/http-errors');
 const Client = require('../models/client');
 const {editfiles} = require('../editfiles');
 const {editotherfiles} = require('../editotherfiles');
+const cnp = require('cnp');
+const fs = require('fs');
 
 
 const router = express.Router();
@@ -29,8 +31,8 @@ const getClients = async (req, res, next) => {
             cnp_nif: client.cnp_nif
         }
     });
-
-    res.json({clients: serializedClients.map(client => client)});
+  
+    res.json({clients: clients.map(client => client.toObject({getters:true}))});
 };
 
 const getClientById = async (req, res, next) => {
@@ -52,6 +54,8 @@ const getClientById = async (req, res, next) => {
 
 const createClient = async (req, res, next) => {
     const validationErrors = validationResult(req);
+
+    console.log("controller", req.body);
 
     if(!validationErrors.isEmpty()) {
 
@@ -100,8 +104,21 @@ const createClient = async (req, res, next) => {
         declar_1,
         declar_2,
         declar_3, 
-        data
+        data, 
+        message
     } = req.body;
+
+    let existingClient;
+    try {
+        existingClient = await Client.findOne({ cnp_nif: cnp_nif });
+    } catch (error) {
+        return next(new HttpError('Incercati va rugam mai tarziu. Serviciu indisponibil', 500));
+    }
+
+
+    if(existingClient) {
+        return next(new HttpError("Acest client identificat prin CNP deja exista."));
+    }
 
     const createdClient = new Client({
         tribunalul,
@@ -145,7 +162,9 @@ const createClient = async (req, res, next) => {
         declar_1,
         declar_2,
         declar_3, 
-        data
+        data, 
+        message,
+        image: req.file.path
     });
 
     try {
@@ -208,7 +227,8 @@ const updateClient = async (req, res, next) => {
         declar_1,
         declar_2,
         declar_3, 
-        data
+        data,
+        message,
     } = req.body;
 
     const clientId = req.params.id; 
@@ -264,6 +284,7 @@ const updateClient = async (req, res, next) => {
     client.declar_2 = declar_2;
     client.declar_3 = declar_3;
     client.data = data;
+    client.message = message;
 
     console.log(client);
 
@@ -291,6 +312,8 @@ const deleteClient = async (req, res, next) => {
         return next(new HttpError("Could not find the client with this id"), 404);
     } 
 
+    const imagePath = client.image;
+
     try {
         new Fawn.Task()
             .remove('clients', {_id: mongoose.Types.ObjectId(clientId)})
@@ -298,6 +321,10 @@ const deleteClient = async (req, res, next) => {
     } catch(err) {
         return next(new HttpError("Something went wrong" + err), 500);
     }
+
+    fs.unlink(imagePath, err => {
+        console.log(err);
+    })
 
     res.status(200).json({message: 'Deleted client'})
 }

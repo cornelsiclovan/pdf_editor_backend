@@ -2,10 +2,14 @@ const express=require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const clientRoutes = require('./routes/client-routes')
+const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use('/uploads/images', express.static(path.join('uploads', 'images')));
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,6 +24,12 @@ app.use((req, res, next) => {
 app.use('/api/clients', clientRoutes);
 
 app.use((error, req, res, next) => {
+    if(req.file) {
+        fs.unlink(req.file.path, err => {
+            console.log(err);
+        });
+    }
+
     if(res.headerSent) {
         return next(error);
     }
@@ -36,3 +46,4 @@ mongoose.connect(`mongodb://localhost/playground`)
     })
     .catch(err => console.error('Could not connect to MongoDb ...', err));
 
+  

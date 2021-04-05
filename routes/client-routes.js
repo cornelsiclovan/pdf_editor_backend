@@ -1,6 +1,7 @@
 const express = require('express');
 const clientControllers = require('../controllers/client-controllers');
-const { check } = require('express-validator')
+const { check } = require('express-validator');
+const fileUpload = require('../middleware/file-uploads');
 
 const router = express.Router();
 
@@ -9,7 +10,10 @@ router.get('/', clientControllers.getClients);
 
 router.get('/:id', clientControllers.getClientById);
 
-router.post('/', clientControllers.createClient);
+router.post('/', 
+    fileUpload.single('image'),
+    clientControllers.createClient
+    );
 
 router.patch('/:id', clientControllers.updateClient);
 

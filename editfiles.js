@@ -431,7 +431,7 @@ const editfiles = async (formData) => {
             
             const pdfBytes = await pdfDoc.save();
         
-            fs.writeFile( pathWrite, pdfBytes, () => {
+            await fs.writeFileSync( pathWrite, pdfBytes, () => {
                 console.log(pathWrite);   
                 console.log("done"); 
             });       

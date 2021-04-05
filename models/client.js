@@ -114,20 +114,16 @@ const clientSchema = new Schema({
         required: true
     },
     sediu_cod: {
-        type: String,
-        required: true
+        type: String
     },
     sediu_cod_post: {   
-        type: String,
-        required: true
+        type: String
     },
     sediu_telefon: {
-        type: String,
-        required: true
+        type: String
     },
     sediu_telefon1: {
-        type: String,
-        required: true
+        type: String
     },
     sediu_fax: {
         type: String
@@ -145,22 +141,26 @@ const clientSchema = new Schema({
         type: String
     },
     declar_1: {
-        type: String,
-        required: true
+        type: String
     },
     declar_2: {
-        type: String,
-        required: true
+        type: String
     },
     declar_3: {
-        type: String,
-        required: true
+        type: String
     }, 
     data: {
+        type: String
+    },
+    message: {
+        type: String
+    },
+    image: {
         type: String,
         required: true
     }
 });
 
+clientSchema.plugin(uniqueValidator);
 
 module.exports = mongoose.model('Client', clientSchema);
