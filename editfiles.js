@@ -24,12 +24,35 @@ const getFiles = () => {
 };
 
 const editfiles = async (formData) => {
+    console.log(formData.image);
+    
+
     await getFiles().then(data => {
         data.forEach(file => {
             files.push(file);
-        });
+        });  
     }); 
 
+
+    let userFolder = path.join('DOCUMENTE_COMPLETATE', formData.subsemnatul);
+
+    const imageName = formData.image.split("\\")[2];
+    console.log(imageName);
+
+    const imagedestname = path.join(userFolder, imageName);
+
+   
+    
+
+    if(!fs.existsSync(userFolder))
+        fs.mkdirSync(userFolder);
+    else {  
+        await fs.rmdirSync(userFolder, {recursive: true});   
+        fs.mkdirSync(userFolder);
+    }
+
+    console.log(imagedestname);
+    fs.copyFileSync(formData.image, imagedestname)
 
     // custom fonts 
     const fontfile = path.join(__dirname,"fonts/RedRose-Regular.ttf");
@@ -47,12 +70,8 @@ const editfiles = async (formData) => {
         let pathWrite = path.join(__dirname, 'DOCUMENTE_COMPLETATE');
         let descriptionFilePath = path.join(__dirname, "descriere.txt");
     
-        
-        let userFolder = path.join('DOCUMENTE_COMPLETATE', formData.subsemnatul);
-    
-        if(!fs.existsSync(userFolder))
-            fs.mkdirSync(userFolder);
-
+              
+       
         pathWrite = path.join(pathWrite, formData.subsemnatul);
   
         pathWrite = path.join(pathWrite, filename);
@@ -423,7 +442,6 @@ const editfiles = async (formData) => {
             });
 
             descriptionString += '\n';
-
 
             fs.writeFile(descriptionFilePath, descriptionString, err => {})
 

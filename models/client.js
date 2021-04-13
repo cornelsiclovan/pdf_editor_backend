@@ -157,7 +157,6 @@ const clientSchema = new Schema({
     },
     image: {
         type: String,
-        required: true
     }
 });
 

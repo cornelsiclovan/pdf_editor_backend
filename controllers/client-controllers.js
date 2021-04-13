@@ -9,7 +9,7 @@ const {editfiles} = require('../editfiles');
 const {editotherfiles} = require('../editotherfiles');
 const cnp = require('cnp');
 const fs = require('fs');
-
+const base64Img = require('base64-img');
 
 const router = express.Router();
 
@@ -48,6 +48,15 @@ const getClientById = async (req, res, next) => {
     } catch (error) {
         error = new HttpError('Could not find client for the provided id', 404);
     }
+
+    // console.log(client.image);
+
+    // var data = base64Img.base64Sync(client.image);
+    // client.imageUrl = client.image;
+    
+    // console.log(client.imageUrl);
+    // client.image = data;
+   
 
     res.json({client: client.toObject( {getters: true} )});
 };

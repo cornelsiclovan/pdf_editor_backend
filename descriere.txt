@@ -47,6 +47,37 @@ PDFTextField: declar.2
 PDFTextField: declar.3
 PDFTextField: data
 
+D1-Nu-se-desfasora-activitate-la-Sediul-profesional-PFA-II-IF.pdf
+------------------------------------
+PDFTextField: 23
+PDFTextField: 24
+PDFTextField: 25
+PDFTextField: 26
+PDFTextField: 27
+PDFTextField: 28
+PDFTextField: 29
+PDFTextField: 30
+PDFTextField: 1
+PDFTextField: 2
+PDFTextField: 3
+PDFTextField: 4
+PDFTextField: 5
+PDFTextField: 6
+PDFTextField: 7
+PDFTextField: 8
+PDFTextField: 9
+PDFTextField: 10
+PDFTextField: 11
+PDFTextField: 12
+PDFTextField: 13
+PDFTextField: 14
+PDFTextField: 15
+PDFTextField: 16
+PDFTextField: 17
+PDFTextField: 18
+PDFTextField: 19
+PDFTextField: 21
+
 specimen_de_semnaturi.pdf
 ------------------------------------
 PDFTextField: form1
@@ -83,37 +114,6 @@ PDFTextField: form19
 PDFTextField: form20
 PDFTextField: form21
 PDFTextField: form22
-
-D1-Nu-se-desfasora-activitate-la-Sediul-profesional-PFA-II-IF.pdf
-------------------------------------
-PDFTextField: 23
-PDFTextField: 24
-PDFTextField: 25
-PDFTextField: 26
-PDFTextField: 27
-PDFTextField: 28
-PDFTextField: 29
-PDFTextField: 30
-PDFTextField: 1
-PDFTextField: 2
-PDFTextField: 3
-PDFTextField: 4
-PDFTextField: 5
-PDFTextField: 6
-PDFTextField: 7
-PDFTextField: 8
-PDFTextField: 9
-PDFTextField: 10
-PDFTextField: 11
-PDFTextField: 12
-PDFTextField: 13
-PDFTextField: 14
-PDFTextField: 15
-PDFTextField: 16
-PDFTextField: 17
-PDFTextField: 18
-PDFTextField: 19
-PDFTextField: 21
 
 11-10-160 AVIZ ASOCIATIE.pdf
 ------------------------------------

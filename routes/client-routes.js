@@ -15,7 +15,9 @@ router.post('/',
     clientControllers.createClient
     );
 
-router.patch('/:id', clientControllers.updateClient);
+router.patch('/:id',
+    clientControllers.updateClient
+    );
 
 router.delete('/:id', clientControllers.deleteClient);
 
