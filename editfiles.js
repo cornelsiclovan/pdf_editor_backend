@@ -1,4 +1,4 @@
-const { PDFDocument, StandardFonts } = require('pdf-lib');
+const { PDFDocument, StandardFonts, findLastMatch, componentsToColor } = require('pdf-lib');
 //for editing word documents. only docx
 const admZip = require('adm-zip');
 const xml2js = require('xml2js');
@@ -47,8 +47,9 @@ const editfiles = async (formData) => {
     if(!fs.existsSync(userFolder))
         fs.mkdirSync(userFolder);
     else {  
-        await fs.rmdirSync(userFolder, {recursive: true});   
-        fs.mkdirSync(userFolder);
+        fs.rmdirSync(userFolder, {recursive: true});   
+        if(!fs.existsSync(userFolder))
+            fs.mkdirSync(userFolder);
     }
 
     console.log(imagedestname);
@@ -69,9 +70,27 @@ const editfiles = async (formData) => {
         
         let pathWrite = path.join(__dirname, 'DOCUMENTE_COMPLETATE');
         let descriptionFilePath = path.join(__dirname, "descriere.txt");
-    
-              
-       
+        let srl = false;
+        let pfa = false;
+
+        if(formData['firma'].includes('srl') 
+            || formData['firma'].includes('s.r.l.')   
+            || formData['firma'].includes('SRL') 
+            || formData['firma'].includes('S.R.L.')
+            ) {
+                srl = true;
+                console.log(formData['firma']);
+        }
+
+        if(formData['firma'].includes('pfa') 
+        || formData['firma'].includes('p.f.a.')
+        || formData['firma'].includes('PFA')
+        || formData['firma'].includes('P.F.A.')
+        ) {
+                pfa = true;
+                console.log(formData['firma']);
+        }
+
         pathWrite = path.join(pathWrite, formData.subsemnatul);
   
         pathWrite = path.join(pathWrite, filename);
@@ -83,6 +102,7 @@ const editfiles = async (formData) => {
 
                 //custom fonts
                 pdfDoc.registerFontkit(fontkit);
+               
                
                 const customFont = await pdfDoc.embedFont(fontBytes);
                 
@@ -111,6 +131,9 @@ const editfiles = async (formData) => {
             
                 descriptionString += `${type}: ${name}`;
                 descriptionString += '\n' 
+                
+                
+ 
                 if(filename === "D1-Nu-se-desfasora-activitate-la-Sediul-profesional-PFA-II-IF.pdf" && type === 'PDFTextField') {
                     if(name === "1") {
                         
@@ -129,7 +152,7 @@ const editfiles = async (formData) => {
                         let nameField = "numar";
                         form.getTextField(name).setText(formData[nameField]);
                     } else if( name === "8" ) {
-
+ 
                         let nameField = "bloc";
                         form.getTextField(name).setText(formData[nameField]);
                     } else if( name === "9" ) {
@@ -200,13 +223,25 @@ const editfiles = async (formData) => {
 
                         let nameField = "sediu_judet";
                         form.getTextField(name).setText(formData[nameField]);
-                    }  else if( name === "27" ) {
+                    }  else if( name === "tribunalul" ) {
 
                         let nameField = "tribunalul";
                         form.getTextField(name).setText(formData[nameField]);
-                    }else if( name === "28" ) {
+                    }else if( name === "21" ) {
 
                         let nameField = "data";
+                        form.getTextField(name).setText(formData[nameField]);
+                    } else if (name === "firma") {
+
+                        let nameField = "firma";
+                        form.getTextField(name).setText(formData[nameField]);
+                    } else if (name === "nascutData") {
+
+                        let nameField = "nascutData";
+                        form.getTextField(name).setText(formData[nameField]);
+                    } else if (name === "nascutInOras") {
+
+                        let nameField = "nascutInOras";
                         form.getTextField(name).setText(formData[nameField]);
                     }
 
@@ -436,6 +471,7 @@ const editfiles = async (formData) => {
                             let nameField = "data";
                             form.getTextField(name).setText(formData[nameField]);
                         } else {
+
                             form.getTextField(name).setText(formData[name]);
                         }
                     }
@@ -447,12 +483,54 @@ const editfiles = async (formData) => {
 
             form.updateFieldAppearances(customFont);
             
-            const pdfBytes = await pdfDoc.save();
+
+
+            if((
+                filename === "D1-Nu-se-desfasora-activitate-la-Sediul-profesional-PFA-II-IF.pdf" ||
+                filename === "11-10-141 DECLARATIE MODEL 1.pdf" ||
+                filename === "11-10-167-2 DECLARATIE MODEL 2.pdf" ||
+                filename === "11-10-168-1 DECLARATIE MODEL 3.pdf" ||
+                filename === "11-10-181 - REZERVARE DENUMIRE.pdf" ||
+                filename === "11-10-160 AVIZ ASOCIATIE.pdf" ||
+                filename === "specimen_de_semnaturi.pdf" ||
+                filename === "11-10-180-1-CERERE-PFA.pdf" ||
+                filename === "pfa_sediu.pdf" ||
+                filename === "model_declaratie_pfa_2.pdf"||
+                filename === "act_constitutiv.pdf" ||
+                filename === "declaratie_de_participare_sot_sotie.pdf" ||
+                filename === "contract_sediu.pdf"
+            ) && pfa) {
+                const pdfBytes = await pdfDoc.save();
         
-            await fs.writeFileSync( pathWrite, pdfBytes, () => {
-                console.log(pathWrite);   
-                console.log("done"); 
-            });       
+                await fs.writeFileSync( pathWrite, pdfBytes, () => {
+                    console.log(pathWrite);   
+                    console.log("done"); 
+                });    
+            }
+
+
+            if((
+                filename === "D1-Nu-se-desfasora-activitate-la-Sediul-profesional-PFA-II-IF.pdf" ||
+                filename === "11-10-168-1 DECLARATIE MODEL 3.pdf" ||
+                filename === "11-10-181 - REZERVARE DENUMIRE.pdf" ||
+                filename === "11-10-141 DECLARATIE MODEL 1.pdf" ||
+                filename === "11-10-167-2 DECLARATIE MODEL 2.pdf" ||
+                filename === "11-10-150-1 CERERE INREGISTRARE.pdf" ||
+                filename === "11-10-184 CERERE MENTIUNE ACTE.pdf" ||
+                filename === "11-10-183 CERERE RADIERE.pdf" ||
+                filename === "11-10-189 CERERE ACTUALIZ CAEN.pdf" ||
+                filename === "specimen_de_semnaturi.pdf" ||
+                filename === "11-10-160 AVIZ ASOCIATIE.pdf" ||
+                filename === "act_constitutiv.pdf" ||
+                filename === "contract_sediu.pdf"
+            ) && srl) {
+                const pdfBytes = await pdfDoc.save();
+        
+                await fs.writeFileSync( pathWrite, pdfBytes, () => {
+                    console.log(pathWrite);   
+                    console.log("done"); 
+                });    
+            }
 
         });
            

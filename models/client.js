@@ -157,6 +157,15 @@ const clientSchema = new Schema({
     },
     image: {
         type: String,
+    },
+    nascutData: {
+        type: String,
+    },
+    nascutJudet: {
+        type: String
+    },
+    nascutInOras: {
+        type: String
     }
 });
 

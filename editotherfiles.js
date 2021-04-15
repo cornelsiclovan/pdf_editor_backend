@@ -46,7 +46,28 @@ const editotherfiles = async (formData) => {
         
         let pathWrite = path.join(__dirname, 'DOCUMENTE_COMPLETATE');
         let descriptionFilePath = path.join(__dirname, "descriere.txt");
-    
+        let srl = false;
+        let pfa = false;
+
+        if(formData['firma'].includes('srl') 
+            || formData['firma'].includes('s.r.l.')
+            || formData['firma'].includes('SRL')
+            || formData['firma'].includes('S.R.L.')
+            ) {
+                srl = true;
+                
+        }
+
+        if(formData['firma'].includes('pfa') 
+        || formData['firma'].includes('p.f.a.')
+        || formData['firma'].includes('PFA')
+        || formData['firma'].includes('P.F.A.')
+        ) {
+                pfa = true;
+        }
+
+
+
         
         let userFolder = path.join('DOCUMENTE_COMPLETATE', formData.subsemnatul);
     
@@ -893,18 +914,36 @@ const editotherfiles = async (formData) => {
                
    
 
-                fs.writeFile(descriptionFilePath, descriptionString, err => {})
+                fs.writeFile(descriptionFilePath, descriptionString, err => {})   
 
-                const pdfBytes = await pdfDoc.save();
+                if((
+                    filename === "act_constitutiv.pdf"  ||
+                    filename === "pfa_sediu"
+
+                ) && pfa) {
+                    const pdfBytes = await pdfDoc.save();
             
-                fs.writeFileSync( pathWrite, pdfBytes, () => {
-                    console.log(pathWrite);   
-                    console.log("done"); 
-                });       
-
+                    await fs.writeFileSync( pathWrite, pdfBytes, () => {
+                        console.log(pathWrite);   
+                        console.log("done"); 
+                    });    
+                }
+    
+    
+                if((
+                    filename === "act_constitutiv.pdf" 
+                ) && srl) {
+                    const pdfBytes = await pdfDoc.save();
+            
+                    await fs.writeFileSync( pathWrite, pdfBytes, () => {
+                        console.log(pathWrite);    
+                        console.log("done"); 
+                    });    
+                }
+ 
         });
           
-    });
+    });  
 }
 
 exports.editotherfiles = editotherfiles;

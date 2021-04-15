@@ -70,7 +70,7 @@ const createClient = async (req, res, next) => {
 
         return next(new HttpError('Invalid inputs passed, please check your data', 422));
     }
-
+ 
     const {
         tribunalul,
         subsemnatul,
@@ -114,7 +114,10 @@ const createClient = async (req, res, next) => {
         declar_2,
         declar_3, 
         data, 
-        message
+        message,
+        nascutData,
+        nascutInOras,
+        nascutJudet
     } = req.body;
 
     let existingClient;
@@ -173,6 +176,9 @@ const createClient = async (req, res, next) => {
         declar_3, 
         data, 
         message,
+        nascutData,
+        nascutInOras,
+        nascutJudet,
         image: req.file.path
     });
 
@@ -238,6 +244,9 @@ const updateClient = async (req, res, next) => {
         declar_3, 
         data,
         message,
+        nascutData,
+        nascutInOras,
+        nascutJudet
     } = req.body;
 
     const clientId = req.params.id; 
@@ -294,7 +303,9 @@ const updateClient = async (req, res, next) => {
     client.declar_3 = declar_3;
     client.data = data;
     client.message = message;
-
+    client.nascutData = nascutData,
+    client.nascutInOras = nascutInOras,
+    client.nascutJudet = nascutJudet,
     console.log(client);
 
     try {
@@ -350,7 +361,7 @@ const editFiles = async (req, res, next) => {
     }
 
     editfiles(client);
-    editotherfiles(client);
+   // editotherfiles(client);
     res.status(200).json({message: "files generated succesfull"});
 }
 
