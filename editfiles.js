@@ -498,7 +498,7 @@ const editfiles = async (formData) => {
                 filename === "model_declaratie_pfa_2.pdf"||
                 filename === "act_constitutiv.pdf" ||
                 filename === "declaratie_de_participare_sot_sotie.pdf" ||
-                filename === "contract_sediu.pdf"
+                filename === "contract_sediu.pdf" 
             ) && pfa) {
                 const pdfBytes = await pdfDoc.save();
         
@@ -522,7 +522,8 @@ const editfiles = async (formData) => {
                 filename === "specimen_de_semnaturi.pdf" ||
                 filename === "11-10-160 AVIZ ASOCIATIE.pdf" ||
                 filename === "act_constitutiv.pdf" ||
-                filename === "contract_sediu.pdf"
+                filename === "contract_sediu.pdf" ||
+                filename === "declaratie_beneficiar_real.pdf"
             ) && srl) {
                 const pdfBytes = await pdfDoc.save();
         
